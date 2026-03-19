@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoey Zheng - Marketing & Partnership Leader</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; }
+
+        /* NAV */
+        nav { position: sticky; top: 0; background: #fff; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 16px 8%; border-bottom: 1px solid #eee; }
+        nav .logo { font-weight: 700; font-size: 18px; color: #e8491d; }
+        nav ul { list-style: none; display: flex; gap: 28px; }
+        nav ul li a { text-decoration: none; color: #555; font-size: 14px; transition: color .2s; }
+        nav ul li a:hover { color: #e8491d; }
+
+        /* HERO */
+        .hero { display: flex; align-items: center; justify-content: center; gap: 60px; padding: 60px 8%; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+        .hero-text { max-width: 520px; }
+        .hero-text h1 { font-size: 32px; font-weight: 700; line-height: 1.35; margin-bottom: 16px; }
+        .hero-text h1 span { color: #e8491d; }
+        .hero-text p { color: #666; margin-bottom: 24px; font-size: 15px; }
+        .btn-primary { background: #e8491d; color: #fff; border: none; padding: 12px 28px; border-radius: 6px; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; transition: background .2s; }
+        .btn-primary:hover { background: #d13a10; }
+        .hero-img { width: 320px; height: 320px; border-radius: 16px; object-fit: cover; }
+
+        /* STATS BAR */
+        .stats-bar { display: flex; justify-content: center; gap: 48px; padding: 40px 8%; flex-wrap: wrap; text-align: center; border-bottom: 1px solid #f0f0f0; }
+        .stat-item .num { font-size: 28px; font-weight: 700; color: #e8491d; }
+        .stat-item .label { font-size: 13px; color: #888; }
+
+        /* LOGO SCROLL */
+        .logo-section { padding: 40px 8%; text-align: center; overflow: hidden; border-bottom: 1px solid #f0f0f0; }
+        .logo-section p { font-size: 13px; color: #999; margin-bottom: 24px; }
+        .logo-track { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+        .logo-track img { height: auto; object-fit: contain; opacity: 0.6; filter: grayscale(100%); transition: all .3s; }
+        .logo-track img:hover { opacity: 1; filter: grayscale(0%); }
+
+        /* SECTIONS */
+        .section { padding: 64px 8%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 24px; font-weight: 700; margin-bottom: 48px; display: flex; align-items: center; gap: 10px; }
+        .section-title::before { content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #e8491d; }
+
+        /* PROJECT CARD */
+        .project { margin-bottom: 64px; }
+        .project h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .project .desc { font-size: 14px; color: #666; margin-bottom: 20px; max-width: 800px; }
+        .project-stats { display: flex; gap: 48px; margin-bottom: 20px; flex-wrap: wrap; }
+        .project-stats .ps-item .ps-num { font-size: 24px; font-weight: 700; color: #e8491d; }
+        .project-stats .ps-item .ps-label { font-size: 12px; color: #888; }
+        .project-images { display: flex; gap: 16px; flex-wrap: wrap; }
+        .project-images img { width: 260px; height: 180px; object-fit: cover; border-radius: 10px; }
+
+        /* SOCIAL MEDIA */
+        .social-cards { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+        .social-card { flex: 1; min-width: 220px; border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
+        .social-card .sc-header { padding: 8px 12px; font-size: 12px; font-weight: 600; color: #888; background: #fafafa; }
+        .social-card img { width: 100%; height: 200px; object-fit: cover; }
+
+        .video-row { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+        .video-card { flex: 1; min-width: 280px; border-radius: 12px; overflow: hidden; }
+        .video-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; }
+        .video-card .caption { font-size: 13px; color: #888; margin-top: 6px; }
+        .vipassana-card { flex: 1; min-width: 280px; background: #fdf6ed; border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 40px; text-align: center; min-height: 320px; }
+        .vipassana-card .vicon { font-size: 40px; margin-bottom: 12px; }
+        .vipassana-card p { font-size: 13px; color: #888; max-width: 280px; }
+
+        /* CONTACT / FOOTER */
+        .contact-section { background: #fdf6ed; padding: 64px 8%; text-align: center; }
+        .contact-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .contact-section .sub { font-size: 14px; color: #666; margin-bottom: 28px; }
+        .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .contact-btns a { text-decoration: none; padding: 12px 28px; border-radius: 6px; font-size: 14px; }
+        .btn-linkedin { background: #e8491d; color: #fff; }
+        .btn-email { background: transparent; color: #e8491d; border: 1px solid #e8491d; }
+        footer { text-align: center; padding: 24px; font-size: 12px; color: #aaa; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; gap: 30px; padding: 40px 5%; }
+            .hero-img { width: 240px; height: 240px; }
+            .hero-text h1 { font-size: 24px; }
+            .stats-bar { gap: 24px; }
+            .stat-item .num { font-size: 22px; }
+            nav ul { gap: 14px; }
+            nav ul li a { font-size: 12px; }
+            .project-images img { width: 100%; height: auto; }
+            .section { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">Zoey Zheng</div>
+    <ul>
+        <li><a href="#ecosystem">Ecosystem Marketing</a></li>
+        <li><a href="#social">Social Media</a></li>
+        <li><a href="#partnerships">Partnerships</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>I build and scale ecosystems in the intersection of <span>education, tech and entrepreneurship.</span></h1>
+        <p>0 → 100K+ Growth | Marketing & Partnerships | U.S. & China</p>
+        <a href="#ecosystem" class="btn-primary">View My Work</a>
+    </div>
+    <img class="hero-img" src="images/hero-zoey.jpg" alt="Zoey speaking">
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+    <div class="stat-item"><div class="num">100K+</div><div class="label">Own followers</div></div>
+    <div class="stat-item"><div class="num">0→20K</div><div class="label">Client Follower Growth</div></div>
+    <div class="stat-item"><div class="num">14B+</div><div class="label">Views</div></div>
+    <div class="stat-item"><div class="num">1000+</div><div class="label">Content Pieces Created</div></div>
+    <div class="stat-item"><div class="num">70+</div><div class="label">Events Delivered</div></div>
+</div>
+
+<!-- LOGO BAR -->
+<div class="logo-section">
+    <p>Trusted by the most respected enterprises</p>
+    <div class="logo-track">
+        <img src="images/hbr-logo.png" alt="Harvard Business Review" style="width:100px;">
+        <img src="images/columbia-logo.png" alt="Columbia University" style="width:100px;">
+        <img src="images/logo-microsoft.png" alt="Microsoft" style="width:100px;">
+        <img src="images/bytedance-logo.png" alt="ByteDance" style="width:100px;">
+        <img src="images/tencent-logo.png" alt="Tencent" style="width:100px;">
+        <img src="images/alibaba-com.png" alt="Alibaba.com" style="width:60px;">
+    </div>
+</div>
+
+<!-- ECOSYSTEM MARKETING -->
+<div class="section" id="ecosystem">
+    <div class="section-title">Ecosystem Marketing</div>
+
+    <div class="project">
+        <h3>Marketing for China's Top Business School Accelerator</h3>
+        <p class="desc">Designed and facilitated start-up accelerator programs in CKGSB for 250+ founders in partnerships with industry giants like Microsoft, Alibaba, Tencent, Baidu, Bytedance and VCs like SoftBank, IDG etc.</p>
+        <div class="project-stats">
+            <div class="ps-item"><div class="ps-num">250+</div><div class="ps-label">Founders Engaged</div></div>
+            <div class="ps-item"><div class="ps-num">250+</div><div class="ps-label">Articles Published</div></div>
+            <div class="ps-item"><div class="ps-num">3.3M+</div><div class="ps-label">Views</div></div>
+        </div>
+        <div class="project-images">
+            <img src="images/ckgsb-1.jpg" alt="CKGSB Event">
+            <img src="images/ckgsb-2.jpg" alt="CKGSB Team">
+            <img src="images/ckgsb-3.jpg" alt="CKGSB Event">
+        </div>
+    </div>
+
+    <div class="project">
+        <h3>Built TikTok Shop Academy as a Hub for E-Commerce Ecosystem</h3>
+        <p class="desc">Led a team of 7 to develop 600+ training programs, case studies, reports and events for over 100k sellers.</p>
+        <div class="project-stats">
+            <div class="ps-item"><div class="ps-num">100K+</div><div class="ps-label">Sellers Registered</div></div>
+            <div class="ps-item"><div class="ps-num">600+</div><div class="ps-label">Training Programs</div></div>
+            <div class="ps-item"><div class="ps-num">$1.5M</div><div class="ps-label">Budget Managed</div></div>
+        </div>
+        <div class="project-images">
+            <img src="images/tiktok-shop.png" alt="TikTok Shop Academy" style="width:100%;max-width:560px;height:auto;">
+        </div>
+    </div>
+
+    <div class="project">
+        <h3>Product Launch PR Campaign for VR PICO 4</h3>
+        <p class="desc">Led the launch campaign for the VR product PICO 4 in China, which generated over 2B impressions. Coordinated press release for PICO 4 with 100+ media offline.</p>
+        <div class="project-stats">
+            <div class="ps-item"><div class="ps-num">2B+</div><div class="ps-label">Impressions</div></div>
+            <div class="ps-item"><div class="ps-num">9,000+</div><div class="ps-label">Media Mentions</div></div>
+            <div class="ps-item"><div class="ps-num">100+</div><div class="ps-label">Media Partners</div></div>
+        </div>
+        <div class="project-images">
+            <img src="images/pico-1.jpg" alt="PICO 4 Launch">
+            <img src="images/pico-2.jpg" alt="PICO 4 Launch">
+        </div>
+    </div>
+</div>
+
+<!-- SOCIAL MEDIA -->
+<div class="section" id="social">
+    <div class="section-title">Social Media</div>
+    <p class="desc" style="margin-bottom:24px;font-size:14px;color:#666;">Built thought leadership brand and created "100 Ways to Evolve" video interview series with 10+ professors. Data-driven strategy with daily analytics tracking.</p>
+    <div class="project-stats" style="margin-bottom:24px;">
+        <div class="ps-item"><div class="ps-num">100K+</div><div class="ps-label">Followers</div></div>
+        <div class="ps-item"><div class="ps-num">1.5M+</div><div class="ps-label">Views</div></div>
+        <div class="ps-item"><div class="ps-num">600+</div><div class="ps-label">Content Pieces</div></div>
+    </div>
+
+    <div class="social-cards">
+        <div class="social-card">
+            <div class="sc-header">RedNote</div>
+            <img src="images/rednote-profile.jpg" alt="RedNote Profile">
+        </div>
+        <div class="social-card">
+            <div class="sc-header">WeChat</div>
+            <img src="images/wechat-profile.jpg" alt="WeChat Profile">
+        </div>
+        <div class="social-card">
+            <div class="sc-header">LinkedIn</div>
+            <img src="images/linkedin-profile.jpg" alt="LinkedIn Profile">
+        </div>
+    </div>
+
+    <div class="video-row">
+        <div class="video-card">
+            <p class="caption">Hot video: 40K views, 3000+ likes</p>
+            <img src="images/pic20-hot-video.jpg" alt="Hot Video">
+        </div>
+        <div class="vipassana-card">
+            <div>
+                <div class="vicon">🧘‍♀️</div>
+                <p>My Second 10-day Vipassana Retreat after Graduation from Master of Spirituality Mind Body at Columbia University</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PARTNERSHIPS -->
+<div class="section" id="partnerships">
+    <div class="section-title">Partnerships</div>
+
+    <div class="project">
+        <h3>Harvard Business Review China Partnership (100M+ views)</h3>
+        <p class="desc">Initiated partnership with Harvard Business Review China and CKGSB, producing a thought leadership documentary featuring 20+ CEOs and experts on e-commerce innovation, which reached 100M+ views and drove founder adoption of TikTok Shop.</p>
+        <div class="project-images">
+            <img src="images/hbr-1.png" alt="HBR Documentary">
+            <img src="images/hbr-2.png" alt="HBR Documentary">
+            <img src="images/hbr-3.png" alt="HBR Documentary">
+        </div>
+    </div>
+
+    <div class="project">
+        <h3>VC & University & Publisher Partnerships</h3>
+        <p class="desc">Delivered events across TikTok Shop (50+) and CKGSB (20+) with VCs and universities and publishers. Full execution: coordination, marketing, logistics.</p>
+        <div class="project-images">
+            <img src="images/events-1.png" alt="Partnership Event">
+            <img src="images/events-2.png" alt="Partnership Event">
+            <img src="images/events-3.png" alt="Partnership Event">
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+    <h2>Let's Connect</h2>
+    <p class="sub">Interested in collaborations, partnerships, or learning more about my work?<br>I'd love to hear from you.</p>
+    <div class="contact-btns">
+        <a href="https://www.linkedin.com/in/zhuoying-zheng/" target="_blank" class="btn-linkedin btn-primary">Connect on LinkedIn</a>
+        <a href="mailto:zoeylifecoach@gmail.com" class="btn-email">zoeylifecoach@gmail.com</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Zoey Zheng. All rights reserved.
+</footer>
+
+<!-- Smooth scroll -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+
+</body>
+</html>
